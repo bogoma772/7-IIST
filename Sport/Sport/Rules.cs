@@ -60,26 +60,29 @@ namespace Sport
                 }
             }
         }
-        public Rule (string name, string fact, AllRules allRules)
+        public Rule (string name, string fact, string essence, string message, AllRules allRules)
         {
             rule =  new List<string>();
             rule.Add(name);
             rule.Add(fact);
+            rule.Add(essence);
             rule.Add(true.ToString());
             rule.Add(false.ToString());
+            rule.Add(message);
             SaveRule(rule, allRules);
         }
 
-        public Rule (string name, string fact, string ans1, string ans2)
+        public Rule (string name, string fact, string essence, string message, string ans1, string ans2, AllRules allRules)
         {
             rule.Add(name);
             rule.Add(fact);
+            rule.Add(essence);
             rule.Add(ans1);
             rule.Add(ans2);
             //allRules.AddRule(rule);
         }
 
-        public Rule(string name, string fact, string ans1, string ans2, string ans3)
+        public Rule(string name, string fact, string essence, string message, string ans1, string ans2, string ans3, AllRules allRules)
         {
             rule.Add(name);
             rule.Add(fact);
@@ -89,7 +92,7 @@ namespace Sport
             //allRules.AddRule(rule);
         }
 
-        public Rule(string name, string fact, string ans1, string ans2, string ans3, string ans4)
+        public Rule(string name, string fact, string essence, string message, string ans1, string ans2, string ans3, string ans4, AllRules allRules)
         {
             rule.Add(name);
             rule.Add(fact);

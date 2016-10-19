@@ -8,5 +8,16 @@ namespace Sport
 {
     class Buf
     {
+        List<List<string>> History;
+
+        public Buf()
+        {
+            History = new List<List<string>>();
+        }
+
+        public void AddRulesInHistory(List<string> newRule)
+        {
+            History.Add(newRule);
+        }
     }
 }

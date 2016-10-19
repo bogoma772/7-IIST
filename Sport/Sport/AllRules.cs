@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Sport
 {
@@ -11,6 +12,12 @@ namespace Sport
         public AllRules()
         {
             allRules = new List<List<string>>();
+            List<string> dir = Directory.GetFiles(@"Rules", "*.txt").ToList<string>();
+            foreach (string fileName in dir)
+            {
+                List<string> newOpenFile = System.IO.File.ReadAllLines(fileName).ToList<string>();
+                AddRule(newOpenFile);
+            }
         }
 
         List<List<string>> allRules;
