@@ -1,0 +1,9 @@
+C:\Учеба\7 семестр\Истомин\7-IIST\Sport\Sport\bin\Debug\Sport.exe.config
+C:\Учеба\7 семестр\Истомин\7-IIST\Sport\Sport\bin\Debug\Sport.exe
+C:\Учеба\7 семестр\Истомин\7-IIST\Sport\Sport\bin\Debug\Sport.pdb
+C:\Учеба\7 семестр\Истомин\7-IIST\Sport\Sport\obj\Debug\Sport.csprojResolveAssemblyReference.cache
+C:\Учеба\7 семестр\Истомин\7-IIST\Sport\Sport\obj\Debug\Sport.Form1.resources
+C:\Учеба\7 семестр\Истомин\7-IIST\Sport\Sport\obj\Debug\Sport.Properties.Resources.resources
+C:\Учеба\7 семестр\Истомин\7-IIST\Sport\Sport\obj\Debug\Sport.csproj.GenerateResource.Cache
+C:\Учеба\7 семестр\Истомин\7-IIST\Sport\Sport\obj\Debug\Sport.exe
+C:\Учеба\7 семестр\Истомин\7-IIST\Sport\Sport\obj\Debug\Sport.pdb
