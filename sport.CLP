@@ -37,97 +37,98 @@
 
 (defrule determine-venue ""
    (not (venue ?))
-   (not (repair ?))
+   (not (sport ?))
    =>
    (assert (venue (yes-or-no-p "Practicing water sports (yes/no)? "))))
    
 (defrule determine-water-team ""
    (venue yes)
-   (not (repair ?))
+   (not (sport ?))
    =>
    (assert (water-team (yes-or-no-p "A team sport yes/no)? "))))
 
 (defrule determine-device-management ""
    (water-team yes)
-   (not (repair ?))   
+   (not (sport ?))   
    =>
    (assert (device-management (yes-or-no-p "The basis of the sport is a device management (yes/no)? "))))
 
 (defrule determine-team-water-games ""
    (device-management no)
-   (not (repair ?))   
+   (not (sport ?))   
    =>
    (assert (team-water-games (yes-or-no-p "Playing sport (yes/no)? "))))
 
 (defrule determine-hard-house-sport ""
    (water-team no)
-   (not (repair ?))   
+   (not (sport ?))   
    =>
    (assert (hard-house-sport (yes-or-no-p "Sport guided wave on the coordination of movements (yes/no)? "))))
 
 (defrule determine-earth-team ""
+
    (venue no)
-   (not (repair ?))
+   (not (sport ?))
    =>
-   (assert (earth-team (yes-or-no-p "A team sport yes/no)? "))))
+   (assert (earth-team (yes-or-no-p "A team sport (yes/no)? "))))
 
 (defrule determine-earth-team-indoors ""
    (earth-team yes)
-   (not (repair ?))   
+   (not (sport ?))   
    =>
    (assert (earth-team-indoors (yes-or-no-p "Classes are held indoors (yes/no)? "))))
 
 (defrule determine-earth-speed ""
    (earth-team-indoors yes)
-   (not (repair ?))   
+   (not (sport ?))   
    =>
    (assert (earth-speed (yes-or-no-p "High-speed sport (yes/no)? "))))
 
 (defrule determine-earth-game-hands ""
    (earth-speed yes)
-   (not (repair ?))   
+   (not (sport ?))   
    =>
    (assert (game-hands (yes-or-no-p "Game hands (yes/no)? "))))
 
 (defrule determine-earth-team-seasonal ""
    (earth-team-indoors no)
-   (not (repair ?))   
+   (not (sport ?))   
    =>
    (assert (earth-team-seasonal (ask-question "Seasonal sport (winter/ summer/ anytime)? " winter summer anytime))))
 
 (defrule determine-earth-physical-contact ""
    (earth-team-seasonal anytime)
-   (not (repair ?))   
+   (not (sport ?))   
    =>
    (assert (earth-physical-contact (yes-or-no-p "Is it permissible physical contact (yes/no)? "))))
 
 (defrule determine-earth-single-seasonal ""
    (earth-team no)
-   (not (repair ?))   
+   (not (sport ?))   
    =>
    (assert (earth-single-seasonal (yes-or-no-p "Seasonal sport  (yes/no)? "))))
 
 (defrule determine-earth-martial-arts ""
    (earth-single-seasonal no)
-   (not (repair ?))   
+   (not (sport ?))   
    =>
    (assert (earth-martial-arts (yes-or-no-p "Martial arts (yes/no)? "))))
 
 (defrule determine-earth-power-quality ""
-   (earth-martial-arts no)
-   (not (repair ?))   
+   (earth-martial-arts no)0
+   (not (sport ?))   
    =>
    (assert (earth-power-quality (yes-or-no-p "The development of power qualities (yes/no)? "))))
 
 (defrule determine-earth-fight ""
    (earth-martial-arts yes)
-   (not (repair ?))   
+   (not (sport ?))   
    =>
    (assert (earth-fight (yes-or-no-p "Fight (yes/no)? "))))
 
 (defrule determine-earth-combat-grips ""
    (earth-fight yes)
-   (not (repair ?))   
+   (not (sport ?))   
    =>
    (assert (earth-combat-grips (yes-or-no-p "The combat grips? (yes/no)? "))))
 
@@ -137,111 +138,111 @@
 
 (defrule ans-device-management ""
    (device-management yes)
-   (not (repair ?))
+   (not (sport ?))
    =>
-  (assert (repair "Rowing")))
+  (assert (sport "Rowing")))
 
 (defrule ans-team-water-games-yes ""
    (team-water-games yes)
-   (not (repair ?))
+   (not (sport ?))
    =>
-   (assert (repair "Water Polo"))) 
+   (assert (sport "Water Polo"))) 
 
 (defrule ans-team-water-games-no ""
    (team-water-games no)
-   (not (repair ?))
+   (not (sport ?))
    =>
-   (assert (repair "Synchronized swimming"))) 
+   (assert (sport "Synchronized swimming"))) 
 
 (defrule ans-hard-house-sport-no ""
    (hard-house-sport yes)
-   (not (repair ?))
+   (not (sport ?))
    =>
-   (assert (repair "Diving")))     
+   (assert (sport "Diving")))     
 
 (defrule ans-hard-house-sport-yes ""
    (hard-house-sport yes)
-   (not (repair ?))
+   (not (sport ?))
    =>
-   (assert (repair "Swimming"))) 
+   (assert (sport "Swimming"))) 
 
 (defrule ans-game-hards-yes ""
    (engine-knocks yes)
-   (not (repair ?))
+   (not (sport ?))
    =>
-   (assert (repair "Basketball")))
+   (assert (sport "Basketball")))
 
 (defrule ans-game-hards ""
    (engine-knocks no)
-   (not (repair ?))
+   (not (sport ?))
    =>
-   (assert (repair "Futsal")))
+   (assert (sport "Futsal")))
 
 (defrule ans-earth-speed-no ""
    (earth-speed no)
-   (not (repair ?))
+   (not (sport ?))
    =>
-   (assert (repair "Volleyball")))
+   (assert (sport "Volleyball")))
 
 (defrule ans-earth-team-seasonal ""
    (earth-team-seasonal winter)
-   (not (repair ?))
+   (not (sport ?))
    =>
-   (assert (repair "Hockey")))
+   (assert (sport "Hockey")))
 
 (defrule ans-earth-team-seasonal ""
    (earth-team-seasonal summer)
-   (not (repair ?))
+   (not (sport ?))
    =>
-   (assert (repair "Polo")))
+   (assert (sport "Polo")))
 
 (defrule ans-earth-physical-contact-yes ""
    (earth-physical-contact yes)
-   (not (repair ?))
+   (not (sport ?))
    =>
-   (assert (repair "American football")))
+   (assert (sport "American football")))
 
 (defrule ans-earth-physical-contact-no ""
    (earth-physical-contact no)
-   (not (repair ?))
+   (not (sport ?))
    =>
-   (assert (repair "Football")))
+   (assert (sport "Football")))
 
 (defrule ans-earth-single-seasonal ""
    (earth-single-seasonal yes)
-   (not (repair ?))
+   (not (sport ?))
    =>
-   (assert (repair "Ski race")))
+   (assert (sport "Ski race")))
 
 (defrule ans-earth-fight ""
    (earth-fight no)
-   (not (repair ?))
+   (not (sport ?))
    =>
-   (assert (repair "Boxing")))
+   (assert (sport "Boxing")))
 
 (defrule ans-earth-combat-grips-no ""
    (earth-combat-grips no)
-   (not (repair ?))
+   (not (sport ?))
    =>
-   (assert (repair "Karate")))
+   (assert (sport "Karate")))
 
 (defrule ans-earth-combat-grips-yes ""
    (earth-combat-grips yes)
-   (not (repair ?))
+   (not (sport ?))
    =>
-   (assert (repair "Greco-Roman wrestling")))
+   (assert (sport "Greco-Roman wrestling")))
 
 (defrule ans-earth-power-quality-yes ""
   (earth-power-quality yes)
-  (not (repair ?))
+  (not (sport ?))
   =>
-  (assert (repair "Bodybuilding")))
+  (assert (sport "Bodybuilding")))
 
 (defrule ans-earth-power-quality-no ""
   (earth-power-quality no)
-  (not (repair ?))
+  (not (sport ?))
   =>
-  (assert (repair "Cross-country")))
+  (assert (sport "Cross-country")))
 
 ;;;********************************
 ;;;* STARTUP AND CONCLUSION RULES *
@@ -254,9 +255,9 @@
   (printout t "The Sports System")
   (printout t crlf crlf))
 
-(defrule print-repair ""
+(defrule print-sport ""
   (declare (salience 10))
-  (repair ?item)
+  (sport ?item)
   =>
   (printout t crlf crlf)
   (printout t "Suggested Repair:")
