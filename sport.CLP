@@ -260,6 +260,6 @@
   (sport ?item)
   =>
   (printout t crlf crlf)
-  (printout t "Suggested Repair:")
+  (printout t "Sport:")
   (printout t crlf crlf)
   (format t " %s%n%n%n" ?item))
